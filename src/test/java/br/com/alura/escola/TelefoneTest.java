@@ -12,16 +12,22 @@ class TelefoneTest {
         assertThrows(IllegalArgumentException.class,
                 () -> new Telefone(null,"123456789"));
         assertThrows(IllegalArgumentException.class,
-                () -> new Telefone("dd1",null));
+                () -> new Telefone("d1",null));
         assertThrows(IllegalArgumentException.class,
-                () -> new Telefone("dd1","123456789"));
+                () -> new Telefone("d1","123456789"));
         assertThrows(IllegalArgumentException.class,
-                () -> new Telefone("011","abc123456"));
+                () -> new Telefone("11","abc123456"));
+        assertThrows(IllegalArgumentException.class,
+                () -> new Telefone("","123456789"));
+        assertThrows(IllegalArgumentException.class,
+                () -> new Telefone("11","1234567"));
+        assertThrows(IllegalArgumentException.class,
+                () -> new Telefone("011","123456789"));
     }
 
     @Test
     public void testDeveCriarTelefone(){
-        assertNotNull(new Telefone("011","123456789"));
+        assertNotNull(new Telefone("11","123456789"));
     }
 
 }
